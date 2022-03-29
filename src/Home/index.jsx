@@ -325,11 +325,21 @@ function Home(props) {
                         className="option"
                       />
                       Khứ hồi
-                      <DatePicker
+                      {/* <DatePicker
                         className="formselectOption"
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
-                      />
+                      /> */}
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DateTimePicker
+                          renderInput={(props) => <TextField {...props} />}
+                          label="DateTimePicker"
+                          value={value}
+                          onChange={(newValue) => {
+                            setValue(newValue);
+                          }}
+                        />
+                      </LocalizationProvider>
                     </div>
                   </Col>
                   <Col sm={4}>
@@ -433,7 +443,7 @@ function Home(props) {
       <h1 className="topic">Tiện ích chuyến bay</h1>
       <br></br>
       <Container>
-        <Row>
+        <Row className="flightFacilities">
           <Col sm={4}>
             <div>
               {/* style={{ width: "215px" }} */}
