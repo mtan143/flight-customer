@@ -14,7 +14,7 @@ import emailjs from "emailjs-com";
 
 const useStyles = makeStyles({
     root:{
-        fontFamily: 'Sansita Swashed cursive',
+      fontFamily: "Sansita Swashed",
         // font-family: 'Sansita Swashed', cursive;
         paddingTop:32,
     },
@@ -22,7 +22,8 @@ const useStyles = makeStyles({
 
     },
     title:{
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily: 'Sansita Swashed',
     },
 });
 
@@ -87,9 +88,12 @@ function ContactForm(props) {
   };
 
   return (
+   
     <div className={classes.root}>
-        
-      <Avatar className={classes.avatar}> 
+        {/* <div>
+        <img src={} alt="flag" />
+         </div> */}
+      {/* <Avatar className={classes.avatar}>  */}
         {/* <LockOutlined></LockOutlined> */}
       
         {/* {/* <img
@@ -97,7 +101,7 @@ function ContactForm(props) {
                 src={hinh5}
                 alt=""
               /> */}
-      </Avatar>
+      {/* </Avatar> */}
 
       <Typography className={classes.title} component="h3" variant="h5">
         Liên hệ với chúng tôi
@@ -118,11 +122,12 @@ function ContactForm(props) {
             {" "}
            Họ và tên:{" "}
             <input
+           
               className="inputContact"
-              style={{ width: "100%" }}
+              style={{ width: "100%" ,borderRadius:"10px" }}
               type="text"
               name="fullName"
-              placeholder="Full Name"
+              placeholder="Nhập họ và tên"
               required
             />
           </label>
@@ -130,8 +135,10 @@ function ContactForm(props) {
           <label>
             Email:{" "}
             <input
+            
+            
               className="inputContact"
-              style={{ width: "100%" }}
+              style={{ width: "100%" , borderRadius:"10px"}}
               type="email"
               name="email"
               placeholder="Email"
@@ -142,11 +149,12 @@ function ContactForm(props) {
           <label>
             Số điện thoại:{" "}
             <input
+           
               className="inputContact"
-              style={{ width: "100%" }}
+              style={{ width: "100%" , borderRadius:"10px" }}
               type="text"
               name="phone"
-              placeholder="Phone"
+              placeholder="Nhập số điện thoại"
               required
             />
           </label>
@@ -155,15 +163,15 @@ function ContactForm(props) {
             Chúng tôi có thể giúp gì cho bạn?:{" "}
             <textarea
               className="inputContact"
-              style={{ width: "100%" }}
+              style={{ width: "100%" , borderRadius:"10px" }}
               id="message"
               rows="8"
-              placeholder="Desription"
+              placeholder="Mô tả"
               required
             />
           </label>
           <br />
-          <button type="submit">Gửi</button>
+          <button type="submit" class="btn btn-primary">Gửi</button>
           <div className="row">{result ? <Result /> : null}</div>
         </div>
       </form>

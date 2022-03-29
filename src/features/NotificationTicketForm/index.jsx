@@ -24,19 +24,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Switch from "@mui/material/Switch";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import "./style.css";
 // import hinh2 from "../resource/hinh2.jpg";
 
 const useStyles = makeStyles({
   root: {
-    fontFamily: "Sansita Swashed cursive",
-    // font-family: 'Sansita Swashed', cursive;
+    // fontFamily: "Sansita Swashed cursive",
+    fontFamily: "Sansita Swashed",
     paddingTop: 32,
   },
   avatar: {},
   title: {
     textAlign: "center",
+    fontFamily: "Sansita Swashed",
   },
 });
 
@@ -186,7 +187,7 @@ function ContactForm(props) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DateTimePicker
                 renderInput={(props) => <TextField {...props} />}
-                label="DateTimePicker"
+                label=" "
                 value={value}
                 onChange={(newValue) => {
                   setValue(newValue);
@@ -200,7 +201,7 @@ function ContactForm(props) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DateTimePicker
                 renderInput={(props) => <TextField {...props} />}
-                label="DateTimePicker"
+                label=" "
                 value={value}
                 onChange={(newValue) => {
                   setValue(newValue);
@@ -255,30 +256,26 @@ function ContactForm(props) {
         </Row>
 
         <h4>Cài đặt thông báo</h4>
-
-        <div className="settingNotification" >
-        <NotificationsIcon />
-          <label>Cài đặt thông báo</label>
-          <input 
-
-            type="text"
-         
-          />
-
-         
-        </div>
-
-        <div className="settingNotification" >
-        < AccountBalanceIcon />
-          <label>Ngân sách</label>
-          <input 
-
-            type="text"
-         
-          />
-
-         
-        </div>
+        <Row>
+          <Col sm={6}>
+            <div className="settingNotification">
+              <NotificationsIcon />
+              <label>Cài đặt thông báo</label>
+            </div>
+          </Col>
+          <Col sm={6}>
+            <input type="text" />
+          </Col>
+          <Col sm={6}>
+            <div className="settingNotification">
+              <AccountBalanceIcon />
+              <label>Ngân sách</label>
+            </div>
+          </Col>
+          <Col sm={6}>
+            <input type="text" />
+          </Col>
+        </Row>
       </form>
     </div>
   );
