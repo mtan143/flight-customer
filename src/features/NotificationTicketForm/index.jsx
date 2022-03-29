@@ -75,9 +75,9 @@ function ContactForm(props) {
 
   return (
     <div className={classes.root}>
-      <Avatar className={classes.avatar}>
+      {/* <Avatar className={classes.avatar}>
         <LockOutlined></LockOutlined>
-      </Avatar>
+      </Avatar> */}
 
       <Typography className={classes.title} component="h3" variant="h5">
         Tạo thông báo giá vé

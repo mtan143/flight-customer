@@ -56,6 +56,21 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import NotificationTicket from "../features/NotificationTicket";
 import NotificationElectric from "../features/NotificationElectric";
 function Home(props) {
+
+   
+  // const setGender=(e) => {
+  //   console.log(e.target.value);
+  // }
+
+  const [isChecked , setIsChecked] = useState(false);
+
+  const handleOnChange = () => {
+    console.log(!isChecked);
+    setIsChecked(!isChecked);
+    
+    
+  }
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -166,7 +181,7 @@ function Home(props) {
                   <Row>
                     <div className="linkIcon">
                       <ConnectWithoutContactIcon />
-                      <Link to="/">
+                      <Link style={{cursor:'pointer'}} to="/">
                         <p className="linkIconTopic" onClick={handleClickOpen}>
                           Liên hệ chúng tôi{" "}
                         </p>
@@ -306,7 +321,7 @@ function Home(props) {
                       <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <DateTimePicker
                           renderInput={(props) => <TextField {...props} />}
-                          label="DateTimePicker"
+                          label=" "
                           value={value}
                           onChange={(newValue) => {
                             setValue(newValue);
@@ -316,30 +331,38 @@ function Home(props) {
                     </div>
                   </Col>
                   <Col sm={4}>
-                    <div>
+                    <div className="topping" >
                       {/* <label>Khứ hồi</label> */}
+                      <div className="khuHoi">
                       <input
-                        type="radio"
-                        value="Male"
-                        name="gender"
+                        type="checkbox"
+                        value="khuHoi"
+                        name="khuHoi"
                         className="option"
+                        
+                        checked={isChecked}
+                        onChange={handleOnChange}
+                        
                       />
+                      
                       Khứ hồi
+                      </div>
                       {/* <DatePicker
                         className="formselectOption"
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
                       /> */}
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      {isChecked ? <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <DateTimePicker
                           renderInput={(props) => <TextField {...props} />}
-                          label="DateTimePicker"
+                          label=" "
                           value={value}
                           onChange={(newValue) => {
                             setValue(newValue);
                           }}
                         />
-                      </LocalizationProvider>
+                      </LocalizationProvider> : <span></span>}
+                      
                     </div>
                   </Col>
                   <Col sm={4}>
