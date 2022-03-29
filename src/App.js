@@ -1,5 +1,8 @@
-// import './App.css';
-import { Provider } from 'react-redux';
+import Footer from './Footer';
+import Header from './Header';
+import Home from './Home';
+
+// import TodoForm from './Home/components/TodoForm';
 
 
 function App() {
@@ -7,10 +10,11 @@ function App() {
   return (
      
     <div className="App">
-      <div>
-          <h1>React hook - PostList </h1>
-      </div>
-
+        <Header />
+        <Home />
+        {/* <TodoForm/> */}
+        
+        <Footer />
     </div>
 
  

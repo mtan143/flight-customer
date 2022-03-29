@@ -1,0 +1,125 @@
+#root{
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.flag {
+    text-align: right;
+    padding: 10px 0px;
+    /* margin-left: 770px; */
+}
+
+
+
+.topic{
+    text-align: center;
+}
+
+.minhtan{
+    margin: 10px 65px
+}
+
+.dinhdat{
+    border-radius: 35px  ;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 5px ;
+    
+}
+
+.dungvan{
+    border-top: green;
+    
+}
+
+
+.submit{
+    background-color: #7191F0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: 8px 0px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 20px;
+    width: 122px;
+    /* margin: -20px 120px; */
+    /* margin: 62px 72px; */
+    float: right;
+   
+}
+
+.formselect{
+    border-radius: 100px;
+    display:block;
+}
+.formselectOption{
+    border-radius: 100px;
+    display:none;
+}
+
+
+/* .option :checked ~ .formselectOption{
+    display: block;
+} */
+
+.contactforus{
+    background: #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 574px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.topic{
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.inputContact{
+    max-width: 600px;
+}
+
+.menu{
+    color: #555;
+    font-weight: 900;
+    /* margin-left: 20px; */
+    margin-top: 18px;
+}
+
+.link{
+    padding : 15px;
+    
+}
+
+.linkIcon{
+    display: flex;
+}
+
+.linkIconTopic{
+    padding-left: 20px;
+}
+
+.optionFight{
+    padding-top: 35px;
+    display: inline-flex;
+    /* margin-left: 50px; */
+}
+
+
+.formFlight{
+    padding-top: 40px;
+}
+
+.button{
+    border: transparent;
+}
+
+.flightFacilities{
+    text-align: center;
+    padding: 20px 0px;
+}
