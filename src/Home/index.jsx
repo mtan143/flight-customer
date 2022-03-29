@@ -1,23 +1,32 @@
-import { InputLabel } from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
+import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
+import FlightClassIcon from "@mui/icons-material/FlightClass";
+import HomeIcon from "@mui/icons-material/Home";
+import LanguageIcon from "@mui/icons-material/Language";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import TextField from "@mui/material/TextField";
 import "bootstrap/dist/css/bootstrap.css";
+import emailjs from "emailjs-com";
 import { useState } from "react";
-import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
-import Select from "@mui/material/Select";
-import { Form, FormControl } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-
-import flag from "../resource/flag.png";
-import "./style.css";
-import { FaTimes } from "react-icons/fa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Calendar from "react-calendar";
-import DatePicker from "react-datepicker";
 import "react-datepicker";
-import { date } from "yup";
 import { BrowserRouter as Link } from "react-router-dom";
+import Contact from "../features/Contact";
+import NotificationElectric from "../features/NotificationElectric";
+import NotificationTicket from "../features/NotificationTicket";
+import doilich from "../resource/doilich.png";
+import flag from "../resource/flag.png";
+import hanhly from "../resource/hanhly.png";
 import hinh1 from "../resource/hinh1.jpg";
 import hinh2 from "../resource/hinh2.jpg";
 import hinh3 from "../resource/hinh3.jpg";
@@ -25,36 +34,9 @@ import hinh4 from "../resource/hinh4.jpg";
 import hinh5 from "../resource/hinh5.jpg";
 import hinh6 from "../resource/hinh6.jpg";
 import yeucauhoantien from "../resource/yeucauhoantien.png";
-import doilich from "../resource/doilich.png";
-import hanhly from "../resource/hanhly.png";
-import emailjs from "emailjs-com";
-import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-import TextField from "@mui/material/TextField";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-// import Select from "react-select";
-import {
-  AiFillAlert,
-  AiFillAlipayCircle,
-  AiFillContainer,
-} from "react-icons/ai";
+import "./style.css";
 
-import HomeIcon from "@mui/icons-material/Home";
-import FlightClassIcon from "@mui/icons-material/FlightClass";
-import LanguageIcon from "@mui/icons-material/Language";
-import Contact from "../features/Contact";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import NotificationTicket from "../features/NotificationTicket";
-import NotificationElectric from "../features/NotificationElectric";
+
 function Home(props) {
 
    
@@ -193,7 +175,7 @@ function Home(props) {
                   <Row>
                     <div className="linkIcon">
                       <LanguageIcon />
-                      <Link to="/">
+                      <Link to="/" >
                         <p className="linkIconTopic" onClick={handleClickOpen}>
                           Quốc gia và ngôn ngữ{" "}
                         </p>
@@ -524,7 +506,8 @@ function Home(props) {
           <Contact />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          {/* <Button onClick={handleClose}>Thoát</Button>
+          <Button onClick={handleClose}>Gửi</Button> */}
         </DialogActions>
       </Dialog>
       {/* Notification Ticket */}
