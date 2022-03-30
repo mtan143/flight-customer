@@ -452,7 +452,7 @@ function Home(props) {
           <Col sm={4}>
             <div>
               {/* style={{ width: "215px" }} */}
-              <button className="button">
+              <button className="button" style={{ width: "215px" }}>
                 <img
                   src={yeucauhoantien}
                   alt=""
