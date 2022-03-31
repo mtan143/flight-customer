@@ -95,7 +95,9 @@
     padding : 15px;
     
 }
-
+.link:hover{
+    cursor: pointer;
+}
 .linkIcon{
     display: flex;
 }

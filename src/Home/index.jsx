@@ -24,17 +24,22 @@ import { BrowserRouter as Link } from "react-router-dom";
 import Contact from "../features/Contact";
 import NotificationElectric from "../features/NotificationElectric";
 import NotificationTicket from "../features/NotificationTicket";
-import doilich from "../resource/doilich.png";
 import flag from "../resource/flag.png";
-import hanhly from "../resource/hanhly.png";
-import hinh1 from "../resource/hinh1.jpg";
-import hinh2 from "../resource/hinh2.jpg";
-import hinh3 from "../resource/hinh3.jpg";
-import hinh4 from "../resource/hinh4.jpg";
-import hinh5 from "../resource/hinh5.jpg";
-import hinh6 from "../resource/hinh6.jpg";
-import yeucauhoantien from "../resource/yeucauhoantien.png";
+
+import h1 from "../resource/h1.jpg";
+import h2 from "../resource/h2.jpg";
+import h3 from "../resource/h3.jpg";
+import h4 from "../resource/h4.jpg";
+import h5 from "../resource/h5.jpg";
+import h6 from "../resource/h6.jpg";
+import h7 from "../resource/h7.jpg";
+import h8 from "../resource/h8.jpg";
+import h9 from "../resource/h9.jpg";
+import h10 from "../resource/h10.jpg";
 import "./style.css";
+
+
+
 
 
 function Home(props) {
@@ -124,7 +129,7 @@ function Home(props) {
     <div className="minhtan">
       <div className="flag">
         {/* <span>VN</span> */}
-        <img src={flag} alt="flag" />
+     
       </div>
 
       <div>
@@ -143,7 +148,7 @@ function Home(props) {
                     <div className="linkIcon">
                       <Link to="/">
                         {" "}
-                        <HomeIcon /> <p className="linkIconTopic">Home</p>{" "}
+                        <HomeIcon color="primary" /> <p className="linkIconTopic">Home</p>{" "}
                       </Link>{" "}
                     </div>
                   </Row>
@@ -153,7 +158,7 @@ function Home(props) {
                     <div className="linkIcon">
                       <Link to="/">
                         {" "}
-                        <FlightClassIcon />{" "}
+                        <FlightClassIcon color="primary" />{" "}
                         <p className="linkIconTopic">Đặt chỗ cho tôi</p>{" "}
                       </Link>{" "}
                     </div>
@@ -162,7 +167,7 @@ function Home(props) {
                 <div className="link">
                   <Row>
                     <div className="linkIcon">
-                      <ConnectWithoutContactIcon />
+                      <ConnectWithoutContactIcon color="primary" />
                       <Link style={{cursor:'pointer'}} to="/">
                         <p className="linkIconTopic" onClick={handleClickOpen}>
                           Liên hệ chúng tôi{" "}
@@ -174,7 +179,7 @@ function Home(props) {
                 <div className="link">
                   <Row>
                     <div className="linkIcon">
-                      <LanguageIcon />
+                      <LanguageIcon color="primary" />
                       <Link to="/" >
                         <p className="linkIconTopic" onClick={handleClickOpen}>
                           Quốc gia và ngôn ngữ{" "}
@@ -186,7 +191,7 @@ function Home(props) {
                 <div className="link">
                   <Row>
                     <div className="linkIcon">
-                      <AirplanemodeActiveIcon />
+                      <AirplanemodeActiveIcon color="primary" />
                       <Link to="/">
                         <p
                           className="linkIconTopic"
@@ -201,7 +206,7 @@ function Home(props) {
                 <div className="link">
                   <Row>
                     <div className="linkIcon">
-                      <NotificationsActiveIcon />
+                      <NotificationsActiveIcon color="primary" />
                       <Link to="/">
                         <p
                           className="linkIconTopic"
@@ -240,13 +245,14 @@ function Home(props) {
                 <Row >
                   <Col sm={4}>
                     <label>Từ</label>
+                    
                     <Form.Select
                       aria-label="Default select example"
                       className="formselect"
                     >
-                      {/* <option>Open this select menu</option> */}
+                     
                       <option value="1">
-                        {/* <FaTimes /> */}
+                      
                         Đà Nẵng, Việt Nam{" "}
                       </option>
                       <option value="2">TP HCM, Việt Nam</option>
@@ -305,6 +311,7 @@ function Home(props) {
                           renderInput={(props) => <TextField {...props} />}
                           label=" "
                           value={value}
+                         
                           onChange={(newValue) => {
                             setValue(newValue);
                           }}
@@ -396,42 +403,38 @@ function Home(props) {
         <Container>
           <Row>
             <Col sm={4}>
-              <img style={{ width: "100%" }} src={hinh1} alt="" />
+              <img src={h1} alt="" />
             </Col>
             <Col sm={4}>
               <img
-                style={{
-                  width: "360px",
-                  height: "255px",
-                  marginBottom: "10px",
-                }}
-                src={hinh2}
+               
+                src={h2}
                 alt=""
               />
             </Col>
             <Col sm={4}>
               <img
-                style={{ width: "100%", marginBottom: "10px", height: "255px" }}
-                src={hinh3}
+                
+                src={h3}
                 alt=""
               />
             </Col>
           </Row>
           <Row style={{ marginTop: "10px" }}>
             <Col sm={4}>
-              <img style={{ width: "100%" }} src={hinh4} alt="" />
+           
+              <img  src={h4} alt="" />
             </Col>
             <Col sm={4}>
               <img
-                style={{ width: "360px", height: "238px" }}
-                src={hinh5}
+                
+                src={h5}
                 alt=""
               />
             </Col>
             <Col sm={4}>
-              <img
-                style={{ width: "100%", height: "238px" }}
-                src={hinh6}
+              <img  
+                src={h6}
                 alt=""
               />
             </Col>
@@ -445,61 +448,73 @@ function Home(props) {
 
       <br></br>
       <br></br>
-      <h1 className="topic">Tiện ích chuyến bay</h1>
+      <h1 className="topic">Tại sao lại đặt chỗ ở Traveloka ?</h1>
       <br></br>
       <Container>
         <Row className="flightFacilities">
-          <Col sm={4}>
+          <Col sm={3}>
             <div>
               {/* style={{ width: "215px" }} */}
-              <button className="button" style={{ width: "215px" }}>
+          
                 <img
-                  src={yeucauhoantien}
+                  src={h7}
                   alt=""
-                  style={{
-                    width: "165px",
-                    height: "165px",
-                    marginBottom: "10px",
-                  }}
+                  // style={{
+                  //   width: "165px",
+                  //   height: "165px",
+                  //   marginBottom: "10px",
+                  // }}
                 />
-                <p>Yêu cầu hoàn tiền</p>
-              </button>
+                <h4>Giải pháp du lịch hoàn thiện</h4>
+                <p>Giải pháp toàn diện - giúp bạn tìm chuyến bay và khách sạn khắp Việt Nam và Đông Nam Á một cách tiết kiệm.</p>
+              
             </div>
           </Col>
-          <Col sm={4}>
+          <Col sm={3}>
             <div>
-              <button className="button" style={{ width: "215px" }}>
+              {/* <button className="button" > */}
                 <img
-                  src={doilich}
+                  src={h8}
                   alt=""
-                  style={{
-                    width: "165px",
-                    height: "165px",
-                    marginBottom: "10px",
-                  }}
+                 
+                
                 />
-                <p>Đổi lịch bay</p>
-              </button>
+                <h4>Giá rẻ mỗi ngày</h4>
+                <p>Giá bạn thấy là giá bạn trả! Dễ dàng so sánh khi không cần phải trả thêm chi phí ẩn! </p>
+              {/* </button> */}
             </div>
           </Col>
-          <Col sm={4}>
+          <Col sm={3}>
             <div>
-              <button className="button" style={{ width: "215px" }}>
+              {/* <button className="button" style={{ width: "215px" }}> */}
                 <img
-                  src={hanhly}
+                  src={h9}
                   alt=""
-                  style={{
-                    width: "165px",
-                    height: "165px",
-                    marginBottom: "10px",
-                  }}
+                 
                 />
-                <p>Mua thêm hành lý</p>
-              </button>
+                <h4>Phương thức thanh toán an toàn và linh hoạt</h4>
+                <p>Giao dịch trực tuyến an toàn với nhiều lựa chọn như thanh toán tại cửa hàng tiện lợi, chuyển khoản ngân hàng, thẻ tín dụng đến Internet Banking. Không tính phí giao dịch. </p>
+              {/* </button> */}
+            </div>
+          </Col>
+
+          <Col sm={3}>
+            <div>
+              {/* <button className="button" style={{ width: "215px" }}> */}
+                <img
+                  src={h10}
+                  alt=""
+                 
+                />
+                <h4>Hỗ trợ khách hàng 24/7</h4>
+                <p>Đội ngũ nhân viên hỗ trợ khách hàng luôn sẵn sàng giúp đỡ bạn trong từng bước của quá trình đặt vé </p>
+              {/* </button> */}
             </div>
           </Col>
         </Row>
       </Container>
+
+      
 
       <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
         <DialogContent>
@@ -538,15 +553,7 @@ function Home(props) {
         </DialogActions>
       </Dialog>
 
-      {/* Contact for me  */}
-      {/* <Dialog disableEscapeKeyDown open={openContact} onClose={handleClose}>
-        <DialogContent>
-          <Contact />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-        </DialogActions>
-      </Dialog> */}
+      
     </div>
   );
 }

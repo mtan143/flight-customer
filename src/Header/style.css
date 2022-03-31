@@ -1,3 +1,9 @@
 .image {
     width: "-webkit-fill-available";
+    
+}
+
+.navBar {
+    background-color: white;
+    color: black;
 }
