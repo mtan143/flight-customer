@@ -1,0 +1,24 @@
+.header {
+   
+    position: absolute;
+    height: 250px;
+    width: 100%;
+}
+
+.banner {
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+    /* padding: 10px; */
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.header1 {
+    position: relative;
+  
+}
+
+.header2 {
+    position: relative;
+}

@@ -1,37 +1,33 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import InputField from "../../Home/InputField";
-import { Avatar, Typography } from "@mui/material";
-import { LockOutlined } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
-import { Button } from "react-bootstrap";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Select from "@mui/material/Select";
-import { Form, FormControl } from "react-bootstrap";
-import FlipCameraAndroidIcon from "@mui/icons-material/FlipCameraAndroid";
-import TextField from "@mui/material/TextField";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
-import { useState } from "react";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Switch from "@mui/material/Switch";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import "./style.css";
+import FlipCameraAndroidIcon from "@mui/icons-material/FlipCameraAndroid";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { Typography } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
+import Switch from "@mui/material/Switch";
+import TextField from "@mui/material/TextField";
+import { makeStyles } from "@mui/styles";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { Form } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+// import "./style.css";
 // import hinh2 from "../resource/hinh2.jpg";
 
 const useStyles = makeStyles({
   root: {
     fontFamily: "Sansita Swashed",
     paddingTop: 32,
+   
+    flex: 1,
   },
   avatar: {},
   title: {
@@ -40,11 +36,11 @@ const useStyles = makeStyles({
   },
 });
 
-ContactForm.propTypes = {
+NotificationTicket.propTypes = {
   onSubmit: PropTypes.func,
 };
 
-function ContactForm(props) {
+function NotificationTicket(props) {
   const classes = useStyles();
   const schema = yup.object().shape({
     fullName: yup.string().required("Please enter title"),
@@ -280,4 +276,4 @@ function ContactForm(props) {
   );
 }
 
-export default ContactForm;
+export default NotificationTicket;

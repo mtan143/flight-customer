@@ -76,7 +76,7 @@
 .topic{
     color: #555;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -100,6 +100,10 @@
 }
 .linkIcon{
     display: flex;
+}
+
+.topic {
+    color: 	#00CED1;
 }
 
 .linkIconTopic{

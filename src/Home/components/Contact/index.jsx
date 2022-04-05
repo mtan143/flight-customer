@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import InputField from "../../Home/InputField";
+// import InputField from "../../Home/InputField";
 import { Avatar,  Typography } from "@mui/material";
 import { LockOutlined } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
@@ -17,6 +17,7 @@ const useStyles = makeStyles({
       fontFamily: "Sansita Swashed",
         // font-family: 'Sansita Swashed', cursive;
         paddingTop:32,
+        
     },
     avatar:{
 
@@ -27,11 +28,11 @@ const useStyles = makeStyles({
     },
 });
 
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
+Contact.propTypes = {
+
 };
 
-function ContactForm(props) {
+function Contact(props) {
   const Result = () => {
     return (
       <p>Your message has been successfully. i will contact with you soon</p>
@@ -63,28 +64,28 @@ function ContactForm(props) {
 
 
   const classes = useStyles();
-  const schema = yup.object().shape({
-    fullName: yup.string().required('Please enter title'),
-    email: yup.string().required('Please enter your email').email('Please enter a valid email'),
-  });
-  const form = useForm({
-    defaultValues: {
-      fullName : "",
-      email: "",
-      phone: "",
-      description: "",
-    },
-    resolver: yupResolver(schema),
-  });
+//   const schema = yup.object().shape({
+//     fullName: yup.string().required('Please enter title'),
+//     email: yup.string().required('Please enter your email').email('Please enter a valid email'),
+//   });
+//   const form = useForm({
+//     defaultValues: {
+//       fullName : "",
+//       email: "",
+//       phone: "",
+//       description: "",
+//     },
+//     resolver: yupResolver(schema),
+//   });
 
-  const handleSubmit = (values) => {
-    const { onSubmit } = props;
-    if (onSubmit) {
-      onSubmit(values);
-    }
+//   const handleSubmit = (values) => {
+//     const { onSubmit } = props;
+//     if (onSubmit) {
+//       onSubmit(values);
+//     }
 
-    form.reset();
-  };
+//     form.reset();
+//   };
 
   return (
    
@@ -103,7 +104,7 @@ function ContactForm(props) {
       {/* </Avatar> */}
 
       <Typography className={classes.title} component="h3" variant="h5">
-        Liên hệ với chúng tôi
+        Liên hệ với chúng tôi 
       </Typography>
 
       {/* <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -178,4 +179,4 @@ function ContactForm(props) {
   );
 }
 
-export default ContactForm;
+export default Contact;
