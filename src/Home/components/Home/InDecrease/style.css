@@ -1,0 +1,37 @@
+
+
+.people {
+    width: 100%;
+    padding: 12px 1px 16px 8px;
+    border-radius: 5px;
+}
+
+.decrease{
+    
+    margin-top: 5%;
+    display: block;
+
+}
+
+
+
+.quanity {
+    width: 105%;
+    margin-top: 5%;
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+
+
+
+
+
+
+.numericInput{
+    float: right;
+    display: inline-block;
+    width: 50px;
+
+}

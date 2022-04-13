@@ -24,15 +24,16 @@ import * as yup from "yup";
 
 const useStyles = makeStyles({
   root: {
-    fontFamily: "Sansita Swashed",
+    fontFamily: "system-ui",
     paddingTop: 32,
-   
+
     flex: 1,
   },
   avatar: {},
   title: {
     textAlign: "center",
-    fontFamily: "Sansita Swashed",
+    fontFamily: "system-ui",
+    color: "#00CED1",
   },
 });
 
@@ -44,7 +45,6 @@ function NotificationTicket(props) {
   const classes = useStyles();
   const schema = yup.object().shape({
     fullName: yup.string().required("Please enter title"),
-    
   });
   const form = useForm({
     defaultValues: {
@@ -69,13 +69,25 @@ function NotificationTicket(props) {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const label1 = { inputProps: { "aria-label": "Checkbox demo" } };
 
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleOnChange = () => {
+    console.log(!isChecked);
+    setIsChecked(!isChecked);
+  };
+
+  const [isCheckedTime, setIsCheckedTime] = useState(false);
+  const handleOnChangeTime = () => {
+    console.log(!isCheckedTime);
+    setIsCheckedTime(!isCheckedTime);
+  };
   return (
     <div className={classes.root}>
       {/* <Avatar className={classes.avatar}>
         <LockOutlined></LockOutlined>
       </Avatar> */}
 
-      <Typography className={classes.title} component="h3" variant="h5">
+      <Typography className={classes.title} component="h3" variant="h4">
         Tạo thông báo giá vé
       </Typography>
 
@@ -83,7 +95,9 @@ function NotificationTicket(props) {
         {/* <InputField name="fullName" label="Full Name" form={form} /> */}
         <Row>
           <Col sm={5}>
-            <label>Từ</label>
+            <label>
+              <b>Từ</b>
+            </label>
             <Form.Select
               aria-label="Default select example"
               className="formselect"
@@ -104,14 +118,16 @@ function NotificationTicket(props) {
           </Col>
           {/* ------------------------------------------------------------------------------------- */}
           <Col sm={2}>
-            <div className="notificationIcon">
+            <div className="notificationIcon" style={{marginTop:"20%"}}>
               <label></label>
-              <FlipCameraAndroidIcon />
+              <FlipCameraAndroidIcon color="primary"/>
             </div>
           </Col>
           {/* ------------------------------------------------------------------------------------------------------- */}
           <Col sm={5}>
-            <label>Đến</label>
+            <label>
+              <b>Đến</b>
+            </label>
             <Form.Select
               aria-label="Default select example"
               className="formselect"
@@ -134,7 +150,9 @@ function NotificationTicket(props) {
         <br></br>
         <Row>
           <Col sm={5}>
-            <label>Số hành khách</label>
+            <label>
+              <b>Số hành khách</b>
+            </label>
             <Form.Select
               aria-label="Default select example"
               className="formselect"
@@ -152,7 +170,9 @@ function NotificationTicket(props) {
           <Col sm={2}></Col>
           {/* ------------------------------------------------------------------------------------------------------- */}
           <Col sm={5}>
-            <label>Hạng ghế</label>
+            <label>
+              <b>Hạng ghế</b>
+            </label>
             <Form.Select
               aria-label="Default select example"
               className="formselect"
@@ -168,21 +188,21 @@ function NotificationTicket(props) {
           </Col>
         </Row>
         <br></br>
-        <h4>Ngày bay</h4>
+        <h4 style={{ color: "#00CED1" }}>Ngày bay</h4>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox defaultChecked />}
             label="Khứ hồi"
+            checked={isChecked}
+            onChange={handleOnChange}
           />
         </FormGroup>
         <Row>
           <Col sm={6}>
-            <label>Ngày đi</label>
-
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DateTimePicker
                 renderInput={(props) => <TextField {...props} />}
-                label=" "
+                label="Ngày đi"
                 value={value}
                 onChange={(newValue) => {
                   setValue(newValue);
@@ -191,66 +211,85 @@ function NotificationTicket(props) {
             </LocalizationProvider>
           </Col>
           <Col sm={6}>
-            <label>Ngày đến</label>
-
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DateTimePicker
-                renderInput={(props) => <TextField {...props} />}
-                label=" "
-                value={value}
-                onChange={(newValue) => {
-                  setValue(newValue);
-                }}
-              />
-            </LocalizationProvider>
+            {isChecked ? (
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DateTimePicker
+                  renderInput={(props) => <TextField {...props} />}
+                  label=" Ngày đến"
+                  value={value}
+                  onChange={(newValue) => {
+                    setValue(newValue);
+                  }}
+                />
+              </LocalizationProvider>
+            ) : (
+              <span></span>
+            )}
           </Col>
         </Row>
         <br></br>
-        <h4>Lựa chọn ưu tiên</h4>
+        <h4 style={{ color: "#00CED1" }}>Lựa chọn ưu tiên</h4>
         <Row>
           <Col sm={6}>
-            <h5>Khung giờ ưu tiên</h5>
+            <label>Khung giờ ưu tiên</label>
           </Col>
           <Col sm={6}>
-            <Switch {...label} defaultChecked />
+            <Switch
+              {...label}
+              checked={isCheckedTime}
+              onChange={handleOnChangeTime}
+              defaultChecked
+            />
           </Col>
         </Row>
 
         <Row>
           <Col sm={6}>
-            <label>Khởi hành</label>
-            <br></br>
-            <Checkbox {...label1} defaultChecked />
-            <label>00:00 - 06:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>06:00 - 12:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>12:00 - 18:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>18:00 - 24:00</label>
+            {isCheckedTime ? (
+              <div>
+                <label>Khởi hành</label>
+                <br></br>
+                <Checkbox defaultChecked />
+                <label>00:00 - 06:00</label>
+                <br></br>
+                <Checkbox />
+                <label>06:00 - 12:00</label>
+                <br></br>
+                <Checkbox />
+                <label>12:00 - 18:00</label>
+                <br></br>
+                <Checkbox />
+                <label>18:00 - 24:00</label>
+              </div>
+            ) : (
+              <span></span>
+            )}
           </Col>
 
           <Col sm={6}>
-            <label>Chuyến về</label>
-            <br></br>
-            <Checkbox {...label1} defaultChecked />
-            <label>00:00 - 06:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>06:00 - 12:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>12:00 - 18:00</label>
-            <br></br>
-            <Checkbox {...label1} />
-            <label>18:00 - 24:00</label>
+            {isCheckedTime ? (
+              <div>
+                <label>Chuyến về</label>
+                <br></br>
+                <Checkbox defaultChecked />
+                <label>00:00 - 06:00</label>
+                <br></br>
+                <Checkbox />
+                <label>06:00 - 12:00</label>
+                <br></br>
+                <Checkbox />
+                <label>12:00 - 18:00</label>
+                <br></br>
+                <Checkbox />
+                <label>18:00 - 24:00</label>
+              </div>
+            ) : (
+              <span></span>
+            )}
           </Col>
         </Row>
 
-        <h4>Cài đặt thông báo</h4>
+        <h4 style={{ color: "#00CED1" }}>Cài đặt thông báo</h4>
         <Row>
           <Col sm={6}>
             <div className="settingNotification">

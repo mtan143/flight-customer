@@ -15,6 +15,8 @@ import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import { pink } from "@mui/material/colors";
 import "./style.css";
+import StatusFlight from "../components/StatusFlight";
+import HistoryTicket from "../components/HistoryTicket";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,7 +59,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <form>
+    <form className="general-form">
       <Box
         className="form"
         sx={{
@@ -69,68 +71,70 @@ export default function VerticalTabs() {
       >
         <Tabs
           orientation="vertical"
-          
           variant="scrollable"
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs example"
           sx={{ borderRight: 1, borderColor: "divider" }}
         >
-         
-            <Tab label="Home" {...a11yProps(0)} icon={<HomeIcon color="primary" />} iconPosition="start" />
-         
+          <Tab
+            label="Đặt chỗ cho tôi"
+            style={{ marginRight: "auto", fontFamily: "system-ui" }}
+            {...a11yProps(0)}
+            icon={<HomeIcon color="primary" />}
+            iconPosition="start"
+          />
 
-         
-           
-            <Tab label="Đặt chỗ cho tôi" {...a11yProps(1)} icon={<AirlineSeatReclineExtraIcon color="secondary" />} iconPosition="start" />
-         
+          <Tab
+            label="Thông báo giá vé"
+            style={{ marginRight: "auto", fontFamily: "system-ui" }}
+            {...a11yProps(1)}
+            icon={<NotificationsActiveIcon color="secondary" />}
+            iconPosition="start"
+          />
 
-         
-           
-            <Tab label="Liên hệ chúng tôi" {...a11yProps(2)} icon={ <ContactPhoneIcon />} iconPosition="start" />
-         
+          <Tab
+            label="Tình trạng chuyến bay"
+            style={{ marginRight: "auto", fontFamily: "system-ui" }}
+            {...a11yProps(2)}
+            icon={<AirplanemodeActiveIcon sx={{ color: pink[500] }} />}
+            iconPosition="start"
+          />
+          <Tab
+            label="Xem lịch sử đặt vé"
+            style={{ marginRight: "auto", fontFamily: "system-ui" }}
+            {...a11yProps(3)}
+            icon={<ContactPhoneIcon color="success" />}
+            iconPosition="start"
+          />
 
-         
-           
-            <Tab label="Quốc gia và ngôn ngữ" {...a11yProps(3)} icon={ <LanguageIcon color="success" />} iconPosition="start" />
-         
-
-         
-             
-            <Tab label="Tình trạng chuyến bay" {...a11yProps(4)} icon={<AirplanemodeActiveIcon color="action" /> } iconPosition="start" />
-         
-
-         
-          
-            <Tab label="Thông báo giá vé" {...a11yProps(5)} icon={  <NotificationsActiveIcon sx={{ color: pink[500] }} />} iconPosition="start" />
-         
+          <Tab
+            label="Liên hệ chúng tôi"
+            style={{ marginRight: "auto", fontFamily: "system-ui" }}
+            {...a11yProps(4)}
+            icon={<ContactPhoneIcon color="action" />}
+            iconPosition="start"
+          />
         </Tabs>
-<div style={{flexGrow:1 , overflowY:"scroll"}}>
+        <div className="tabVertical" style={{ flexGrow: 1 }}>
+          <TabPanel value={value} index={0}>
+            <Home />
+          </TabPanel>
 
-
-        <TabPanel value={value} index={0}>
-         
-          <Home />
-        </TabPanel>
-
-        <TabPanel value={value} index={1}>
-          <NotificationTicket />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Contact />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          Quốc gia và ngôn ngữ
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          Tình trạng chuyến bay
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          Thông báo giá vé
-        </TabPanel>
+          <TabPanel value={value} index={1}>
+            <NotificationTicket />
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <StatusFlight />
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <HistoryTicket />
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <Contact />
+          </TabPanel>
         </div>
       </Box>
-    
     </form>
   );
 }

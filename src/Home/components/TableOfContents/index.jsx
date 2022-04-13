@@ -9,7 +9,7 @@ index.propTypes = {};
 function index(props) {
   return (
     <div>
-      <form>
+      <form style={{fontFamily: 'system-ui'}}>
         <Container>
           <Row >
             <Col sm={3}>

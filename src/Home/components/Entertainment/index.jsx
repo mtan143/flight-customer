@@ -11,7 +11,7 @@ Entertainment.propTypes = {
 
 function Entertainment(props) {
     return (
-        <div>
+        <div style={{fontFamily: 'system-ui'}}  >
              <form>
         <Container>
           <Row >

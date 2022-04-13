@@ -52,12 +52,12 @@ export default function BasicTabs() {
       <div  > 
 
      
-    <Box sx={{ width: '100%' , }}>
+    <Box sx={{ width: '100%' , fontFamily: "system-ui"}}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' , justifyContent: 'center'}} >
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"centered >
-          <Tab label="Các chặng bay và hãng bay" {...a11yProps(0)} />
-          <Tab label="Combo Vé máy bay" {...a11yProps(1)} />
-          <Tab label="Hoạt động Tham quan và Giải trí" {...a11yProps(2)} />
+          <Tab label="Các chặng bay và hãng bay" style={{fontFamily: 'system-ui'}} {...a11yProps(0)} />
+          <Tab label="Combo Vé máy bay" style={{fontFamily: 'system-ui'}} {...a11yProps(1)} />
+          <Tab label="Hoạt động Tham quan và Giải trí" style={{fontFamily: 'system-ui'}} {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

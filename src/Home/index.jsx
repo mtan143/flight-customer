@@ -1,31 +1,20 @@
-import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact"
-import HomeIcon from "@mui/icons-material/Home";
-import LanguageIcon from "@mui/icons-material/Language";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import DateTimePicker from "@mui/lab/DateTimePicker";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import TextField from "@mui/material/TextField";
 import "bootstrap/dist/css/bootstrap.css";
 import emailjs from "emailjs-com";
 import { useState } from "react";
-import { Form } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "react-datepicker";
-import { BrowserRouter as Link } from "react-router-dom";
 import Contact from "../features/Contact";
 import NotificationElectric from "../features/NotificationElectric";
 import NotificationTicket from "../features/NotificationTicket";
 // import flag from "../resource/flag.png";
-
 import h1 from "../resource/h1.jpg";
+import h10 from "../resource/h10.jpg";
 import h2 from "../resource/h2.jpg";
 import h3 from "../resource/h3.jpg";
 import h4 from "../resource/h4.jpg";
@@ -34,10 +23,9 @@ import h6 from "../resource/h6.jpg";
 import h7 from "../resource/h7.jpg";
 import h8 from "../resource/h8.jpg";
 import h9 from "../resource/h9.jpg";
-import h10 from "../resource/h10.jpg";
+import BasicTabs from "./BasicTabs";
 import "./style.css";
 import VerticalTabs from "./VerticalTabs";
-import BasicTabs from "./BasicTabs";
 
 
 
@@ -45,33 +33,13 @@ import BasicTabs from "./BasicTabs";
 
 function Home(props) {
 
-   
-  
-
-  // const [isChecked , setIsChecked] = useState(false);
-
-  // const handleOnChange = () => {
-  //   console.log(!isChecked);
-  //   setIsChecked(!isChecked);
-    
-    
-  // }
-
   const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
   };
   // Notification Ticket
   const [openTicket, setOpenTicket] = useState(false);
-
-  const handleClickOpenTicket = () => {
-    setOpenTicket(true);
-  };
 
   const handleCloseTicket = () => {
     setOpenTicket(false);
@@ -80,56 +48,24 @@ function Home(props) {
   //Vé điện tử của tôi
   const [openElectric, setOpenElectric] = useState(false);
 
-  const handleClickOpenElectric = () => {
-    setOpenElectric(true);
-  };
 
   const handleCloseElectric = () => {
     setOpenElectric(false);
   };
-  // const [value, setValue] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const Result = () => {
-    return (
-      <p>Your message has been successfully. i will contact with you soon</p>
-    );
-  };
-  const [result, showResult] = useState(false);
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      // "service_9yb75mn",
-      .sendForm(
-        "service_9yb75mn ",
-        "template_zukmpme",
-        e.current,
-        "mLngXLE8LzsrUsMWE"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-    showResult(true);
-  };
-
+  const [count, setCount] = useState(0);
   return (
+  
     <div className="minhtan">
       <div className="flag">
-        {/* <span>VN</span> */}
-     
+        
+        <VerticalTabs />
+    
       </div>
+      {count}
+ <button onClick={() => setCount(x => x + 1)}>Increase</button>
 
       <div>
-
-
-        <VerticalTabs />
+       
 
         <br></br>
         <br></br>
@@ -141,37 +77,37 @@ function Home(props) {
         <Container>
           <Row>
             <Col sm={4}>
-              <img src={h1} alt="" />
+              <img style={{borderRadius:"10px", margin:"5% 5%"}} src={h1} alt="" />
             </Col>
             <Col sm={4}>
-              <img
+              <img style={{borderRadius:"10px" , margin:"5% 5%"}}
                
                 src={h2}
                 alt=""
               />
             </Col>
             <Col sm={4}>
-              <img
+              <img style={{borderRadius:"10px" , margin:"5% 5%"}}
                 
                 src={h3}
                 alt=""
               />
             </Col>
           </Row>
-          <Row style={{ marginTop: "10px" }}>
+          <Row >
             <Col sm={4}>
            
-              <img  src={h4} alt="" />
+              <img  style={{borderRadius:"10px" , margin:"5% 5%"}} src={h4} alt="" />
             </Col>
             <Col sm={4}>
-              <img
+              <img style={{borderRadius:"10px" , margin:"5% 5%"}}
                 
                 src={h5}
                 alt=""
               />
             </Col>
             <Col sm={4}>
-              <img  
+              <img  style={{borderRadius:"10px" ,margin:"5% 5%"}}
                 src={h6}
                 alt=""
               />

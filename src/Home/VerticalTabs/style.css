@@ -1,5 +1,14 @@
 .form{
-    border-radius: 5px  ;
+    border-radius: 10px  ;
     border: 2px solid #ddd;
     box-shadow: 2px 2px 5px ;
+    position: relative;
+    font-family: "system-ui";
+}
+.tabVertical {
+    overflow-y: hidden;
+    overflow-y: scroll;
+}
+.general-form {
+    font-family: "system-ui";
 }

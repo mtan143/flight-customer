@@ -1,0 +1,35 @@
+.input {
+    border-bottom: 2px solid #999;
+    /* border: transparent transparent red transparent; */
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    width: 100%;
+}
+
+.dayGo {
+    margin: 40px 0 0 0;
+}
+
+.notification {
+    
+    border: 1px solid #b1154a;
+    border-radius: 9px;
+    text-align: center;
+    margin: 50px 0 0 0;
+    line-height: 30px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+.notificationName {
+    color:red;
+    margin-bottom: 0px;
+}
+
+.btn-primary {
+    margin-left: 70%;
+    margin-top: 5%;
+}

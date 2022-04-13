@@ -1,4 +1,14 @@
-#root{
-    font-family: 'Sansita Swashed', cursive;
+/*  */
+
+.font {
+    font-family: 'system-ui'
+}
+
+.option {
+    padding-left: 5%;
+}
+
+.radio {
+    padding-left: 5%;
 }
 

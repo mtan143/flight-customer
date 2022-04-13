@@ -15,16 +15,9 @@ Footer.propTypes = {
 function Footer(props) {
    
     return (
-        // <div  style={{
-        //     backgroundColor: 'blue',
-        //     width: 'auto',
-        //     height: '100px'
-        //   }}>
-        //       Liên hệ với chúng tôi
-           
-        // </div>
-        <MDBFooter color="blue" className="font-small pt-4 mt-4">
-        <MDBContainer fluid className="text-center text-md-left">
+    
+        <MDBFooter color="blue" className="font-small pt-4 mt-4" style={{fontFamily: "system-ui"}} >
+        <MDBContainer fluid className="text-center text-md-left" >
           <MDBRow>
             <MDBCol md="6">
               <h5 className="title">Chủ đề về chuyến bay</h5>

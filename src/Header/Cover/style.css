@@ -1,7 +1,7 @@
 .header {
    
     position: absolute;
-    height: 250px;
+    height: 275px;
     width: 100%;
 }
 
@@ -9,7 +9,6 @@
     text-align: center;
     padding: 10px;
     text-align: center;
-    /* padding: 10px; */
     justify-content: space-evenly;
     display: flex;
 }
@@ -22,3 +21,9 @@
 .header2 {
     position: relative;
 }
+
+.carousel-inner img {
+    background-origin: content-box;
+    margin: 10px 0;
+    /* margin: 25px 550px; */
+  }

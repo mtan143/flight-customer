@@ -11,7 +11,7 @@ ComboTicket.propTypes = {
 
 function ComboTicket(props) {
     return (
-        <div>
+        <div style={{fontFamily: 'system-ui'}}>
              <form>
         <Container>
           <Row >

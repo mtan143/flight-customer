@@ -3,9 +3,10 @@
 } */
 
 .flag {
-    text-align: right;
-    padding: 10px 0px;
+    /* text-align: right;
+    padding: 10px 0px; */
     /* margin-left: 770px; */
+    padding: 0px;
 }
 
 
@@ -15,7 +16,8 @@
 }
 
 .minhtan{
-    margin: 10px 65px
+    margin: 10px 65px;
+    font-family: 'system-ui';
 }
 
 .dinhdat{

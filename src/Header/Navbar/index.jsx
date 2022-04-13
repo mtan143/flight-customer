@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -8,20 +8,18 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 // import flag from "../resource/flag.png" ;
-import flag from "../../resource/flag.png"
+import flag from "../../resource/flag.png";
 import AirlineSeatReclineNormalIcon from "@mui/icons-material/AirlineSeatReclineNormal";
 
-Navbar.propTypes = {
-    
-};
+Navbar.propTypes = {};
 
 function Navbar(props) {
-    return (
-        <div>
-              <div>
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
-            <Toolbar style={{ color: "black", backgroundColor: "white" }}>
+  return (
+    <div>
+      <div >
+        <Box sx={{ flexGrow: 1 }}  >
+          <AppBar position="static" style={{backgroundColor:"white"}} >
+            <Toolbar className="navBar" style={{ color: "black", backgroundColor: "white" ,width:1200 , margin:"auto" }}>
               <IconButton
                 size="large"
                 edge="start"
@@ -47,8 +45,8 @@ function Navbar(props) {
           </AppBar>
         </Box>
       </div>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default Navbar;

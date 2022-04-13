@@ -1,0 +1,19 @@
+.formContact {
+    display: flex;
+}
+
+.contactforus{
+    width: 90%;
+    max-width: 797px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.inputContactHelp {
+    width: 162%;
+}
+
+.inputForm {
+    padding-left: 15px;
+}
+
