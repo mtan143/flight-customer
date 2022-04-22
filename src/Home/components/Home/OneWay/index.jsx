@@ -11,7 +11,7 @@ import dateFormat from "dateformat";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
-import qs from 'qs';
+import qs from "qs";
 import "react-dropdown/style.css";
 
 // import FlightApi from '../../../../SearchApi';
@@ -49,7 +49,6 @@ function OneWay(props) {
 
   const [value, setValue] = useState(dateFormat(new Date(), "yyyy-mm-dd"));
 
-
   //------------------------------------------- Lấy dữ liệu ----------------------------------------------//
   // Dữ liệu "Từ"
   const addrtype = [
@@ -74,7 +73,7 @@ function OneWay(props) {
     "Hà Nội, Việt Nam",
     "Đà Lạt, Việt Nam",
     "Nha Trang, Việt Nam",
-    "Phú Quốc, Việt Nam", 
+    "Phú Quốc, Việt Nam",
     "Huế, Việt Nam",
     "Vinh, Việt Nam",
   ];
@@ -97,7 +96,6 @@ function OneWay(props) {
     "Thương gia",
     "Hạng nhất",
   ];
-  
 
   const [chair, setChair] = useState("Phổ thông");
   const handleChangeSeat = (e) => {
@@ -105,61 +103,40 @@ function OneWay(props) {
     setChair(dataSeat[e.target.value]);
   };
 
-  const [test, setTest] = useState([]);
+  const [list, setList] = useState([]);
 
   const submitForm = useCallback(() => {
     const searchFlight = async () => {
-      const params = {
-        "departurePlace": go,
-        "destination": arrive,
-        "classType": "THUONG_GIA",
-        "departure": "2022-05-04",
-        "quantity": quantity,
-      }
-      console.log(params);
-      const response = await flight.getAll();
-      setTest(response.data);
+      let data = JSON.stringify({
+        departurePlace: go,
+        destination: arrive,
+        classType: "THUONG_GIA",
+        departure: value,
+        quantity: quantity,
+      });
+
+      const response = await axios.post(
+        "https://flight-mana.herokuapp.com/api/customers/flights/search",
+        data,
+        { headers: { "Content-Type": "application/json" } }
+      );
+      setList(response.data.data);
       console.log(response.data.data);
-
-      // const response = await axios({
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type' : 'application/json'
-      //   },
-      //   data: qs.stringify(params),
-      //   url: 'https://flight-mana.herokuapp.com/api/customers/flights/search'
-      // })
-      // console.log(response['data']);
-
-
-      // setPage(true);
-    };  
+    };
     searchFlight();
-  }, [go, arrive, chair, value, quantity]);
+  }, []);
 
-  
   const onQuantityChange = (quantity) => {
     setQuantity(quantity);
-  }
-
-    
+  };
 
   useEffect(() => {
     console.log(quantity);
-  
   }, [quantity]);
-
-  // const [page, setPage] = useState(false);
-  // const handlePage = event => {
-  //   setPage(!page)
-  // }
 
   useEffect(() => {
     console.log(value);
   }, [value]);
-
-
-  
 
   return (
     <form>
@@ -205,20 +182,18 @@ function OneWay(props) {
             <div>
               <label>Ngày đi</label>
 
-              <LocalizationProvider dateAdapter={AdapterDateFns} >
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
                   renderInput={(props) => <TextField {...props} />}
                   label=" "
                   value={value}
-                  onChange={(newValue) =>  {
+                  onChange={(newValue) => {
                     setValue(dateFormat(newValue, "yyyy-mm-dd"));
-                    
                   }}
-                  
+
                   // onChange={handleChangeDatePick}
-                /> 
+                />
               </LocalizationProvider>
-           
             </div>
           </Col>
           <Col sm={4}>
@@ -266,64 +241,37 @@ function OneWay(props) {
         </Row>
 
         <Row>
-          
           <Col sm={12}>
-          <div style={{display:"flex" , marginLeft:"49%"}}>
-          
-          <Link to={"/flightList"} className="nav-link">
-            <button
-                variant="contained"
-                class="btn btn-primary"
-                type="button"
-                style={{ width: "100%", position:"relative" , left:"155px" }}
-                onClick={submitForm}
-               
-              >
-                {" "}
-                Tìm chuyến bay
-            
-              </button>
-     
+            <div style={{ display: "flex", marginLeft: "49%" }}>
+              <Link to={"/flightList"} className="nav-link">
+                <button
+                  variant="contained"
+                  class="btn btn-primary"
+                  type="button"
+                  style={{ width: "100%", position: "relative", left: "155px" }}
+                  onClick={submitForm}
+                >
+                  {" "}
+                  Tìm chuyến bay
+                </button>
               </Link>
 
-            
-           {/* <Routes>
+              {/* <Routes>
             <Route exact path="/flightList" element={<FlightList />} />
           
           </Routes>  */}
-          
-              </div>
-       
-           
-              
-      
-        
-          
-          {/* </Switch> */}
-          {/* </BrowserRouter> */}
-        
+            </div>
+
+            {/* </Switch> */}
+            {/* </BrowserRouter> */}
           </Col>
         </Row>
       </Container>
-     
-      {/* <ul>
-        {test.filter((list) => (
-          <li key={list.flightId}>{list.name} </li>
-        ))}
-      </ul> */}
       <ul>
-      {test.filter( test => test.departurePlace === go, test.destination ===arrive , test.classType==="THUONG_GIA" , test.departure="2022-05-04", test.quantity=quantity ).map(flight => (
-        <li>
-          {flight.name}
-        </li>
-      ))
-      // "departurePlace": go,
-      //   "destination": arrive,
-      //   "classType": "THUONG_GIA",
-      //   "departure": "2022-05-04",
-      //   "quantity": quantity, 
-          }
-          </ul>
+        {list.map((flight) => (
+          <li key={flight.flightId}>{flight.name}</li>
+        ))}
+      </ul>
     </form>
   );
 }
