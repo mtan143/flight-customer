@@ -12,7 +12,9 @@
   border: 1px solid #999;
 }
 
-
+.MuiSvgIcon-root {
+  color:blue;
+}
 
 .option{
   padding-left: 5%;

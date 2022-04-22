@@ -6,7 +6,7 @@ HistoryTicket.propTypes = {};
 
 function HistoryTicket(props) {
   return (
-    <div>
+    <div className="historyTicket" style={{fontFamily: 'system-ui'}}>
       <label>Email / SĐT :</label>
       <input
         className="input"

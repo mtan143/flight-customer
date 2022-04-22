@@ -17,7 +17,7 @@ function Navbar(props) {
   return (
     <div>
       <div >
-        <Box sx={{ flexGrow: 1 }}  >
+        <Box sx={{ flexGrow: 1 }} style={{zIndex:1090}}  >
           <AppBar position="static" style={{backgroundColor:"white"}} >
             <Toolbar className="navBar" style={{ color: "black", backgroundColor: "white" ,width:1200 , margin:"auto" }}>
               <IconButton

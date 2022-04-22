@@ -14,6 +14,8 @@ import { red } from "@mui/material/colors";
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import VerticalTabs from "../../VerticalTabs";
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 
 StatusFlight.propTypes = {};
@@ -27,7 +29,7 @@ function StatusFlight(props) {
           <Col sm={12}>
             <div>
               <AirplanemodeActiveIcon />
-              <label for="lname">Mã chuyến bay</label>
+              <label for="lname" style={{marginLeft:"15px"}}>Mã chuyến bay :</label>
 
               <input
                 className="input"
@@ -60,13 +62,17 @@ function StatusFlight(props) {
             </div>
           </Col>
         </Row>
-        <div className="notification">
+        {/* <div className="notification">
           <PriorityHighIcon sx={{ color: red[500] }} />
           <p className="notificationName">
             Thông tin chuyến bay chỉ mang tính chất tham khảo
           </p>
+        </div> */}
+        <div>
+        <Alert severity="error" style={{paddingLeft:"35%" , marginTop:"20px"}} >Thông tin chuyến bay chỉ mang tính chất tham khảo</Alert>
         </div>
-        {/* <Link to="/Contact"></Link> */}
+       
+    
         <button variant="contained"  className="btn btn-primary" type="submit" >
           Tìm tình trạng chuyến bay 
         </button>

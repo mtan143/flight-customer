@@ -1,9 +1,3 @@
-.header {
-   
-    position: absolute;
-    height: 275px;
-    width: 100%;
-}
 
 .banner {
     text-align: center;
@@ -13,17 +7,18 @@
     display: flex;
 }
 
-.header1 {
-    position: relative;
-  
+
+
+.cover {
+    position: absolute;
+    width: 100%;
 }
 
-.header2 {
-    position: relative;
+.carousel{
+    margin-bottom: -4%;
+    padding-top: 25px;
 }
 
-.carousel-inner img {
-    background-origin: content-box;
-    margin: 10px 0;
-    /* margin: 25px 550px; */
-  }
+.backward {
+    border: 0px solid white;
+}

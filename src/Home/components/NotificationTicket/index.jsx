@@ -19,7 +19,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-// import "./style.css";
+import "./style.css";
 // import hinh2 from "../resource/hinh2.jpg";
 
 const useStyles = makeStyles({
@@ -118,9 +118,9 @@ function NotificationTicket(props) {
           </Col>
           {/* ------------------------------------------------------------------------------------- */}
           <Col sm={2}>
-            <div className="notificationIcon" style={{marginTop:"20%"}}>
+            <div className="notificationIcon" style={{ marginTop: "20%" }}>
               <label></label>
-              <FlipCameraAndroidIcon color="primary"/>
+              <FlipCameraAndroidIcon color="primary" />
             </div>
           </Col>
           {/* ------------------------------------------------------------------------------------------------------- */}
@@ -187,8 +187,8 @@ function NotificationTicket(props) {
             </Form.Select>
           </Col>
         </Row>
-        <br></br>
-        <h4 style={{ color: "#00CED1" }}>Ngày bay</h4>
+
+        <h4 style={{ color: "#00CED1", marginTop: "80px" }}>Ngày bay</h4>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox defaultChecked />}
@@ -291,24 +291,32 @@ function NotificationTicket(props) {
 
         <h4 style={{ color: "#00CED1" }}>Cài đặt thông báo</h4>
         <Row>
-          <Col sm={6}>
+          <Col sm={3}>
             <div className="settingNotification">
               <NotificationsIcon />
-              <label>Cài đặt thông báo</label>
+              <label className="settingNotification-title">
+                Cài đặt thông báo
+              </label>
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={3}>
             <input type="text" />
           </Col>
-          <Col sm={6}>
+          <Col sm={3}></Col>
+          <Col sm={3}></Col>
+        </Row>
+        <Row>
+          <Col sm={3}>
             <div className="settingNotification">
               <AccountBalanceIcon />
-              <label>Ngân sách</label>
+              <label className="settingNotification-title">Ngân sách</label>
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={3}>
             <input type="text" />
           </Col>
+          <Col sm={3}></Col>
+          <Col sm={3}></Col>
         </Row>
       </form>
     </div>

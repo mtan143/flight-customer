@@ -90,14 +90,14 @@ function MulCity(props) {
               aria-label="Default select example"
               className="formselect"
             >
-              <option value="1">Đà Nẵng, Việt Nam </option>
-              <option value="2">TP HCM, Việt Nam</option>
-              <option value="3">Hà Nội, Việt Nam</option>
-              <option value="3">Đà Lạt, Việt Nam</option>
-              <option value="3">Nha Trang, Việt Nam</option>
-              <option value="3">Phú Quốc, Việt Nam</option>
-              <option value="3">Huế, Việt Nam</option>
-              <option value="3">Vinh, Việt Nam</option>
+              <option value="1">TP HCM, Việt Nam </option>
+              <option value="2">Đà Nẵng, Việt Nam</option>
+              <option value="4">Hà Nội, Việt Nam</option>
+              <option value="5">Đà Lạt, Việt Nam</option>
+              <option value="6">Nha Trang, Việt Nam</option>
+              <option value="7">Phú Quốc, Việt Nam</option>
+              <option value="8">Huế, Việt Nam</option>
+              <option value="9">Vinh, Việt Nam</option>
             </Form.Select>
           </Col>
           <Col sm={4}>
@@ -108,16 +108,15 @@ function MulCity(props) {
             >
               {/* <option>Open this select menu</option> */}
               <option value="1">
-                {/* <FaTimes /> */}
                 Đà Nẵng, Việt Nam{" "}
               </option>
               <option value="2">TP HCM, Việt Nam</option>
               <option value="3">Hà Nội, Việt Nam</option>
-              <option value="3">Đà Lạt, Việt Nam</option>
-              <option value="3">Nha Trang, Việt Nam</option>
-              <option value="3">Phú Quốc, Việt Nam</option>
-              <option value="3">Huế, Việt Nam</option>
-              <option value="3">Vinh, Việt Nam</option>
+              <option value="5">Đà Lạt, Việt Nam</option>
+              <option value="6">Nha Trang, Việt Nam</option>
+              <option value="7">Phú Quốc, Việt Nam</option>
+              <option value="8">Huế, Việt Nam</option>
+              <option value="9">Vinh, Việt Nam</option>
             </Form.Select>
           </Col>
           <Col sm={4}>

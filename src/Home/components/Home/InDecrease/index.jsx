@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import PeopleIcon from "@mui/icons-material/People";
@@ -19,20 +19,39 @@ function InDecrease(props) {
 
   const [isToggle, setIsToggle] = useState(false);
 
-  // const myFormat = (num) => {
-  //   return num + '$';
-  // }
+  
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+   
+    onQuantityChange(quantity);
+  }, [quantity])
+
+  const onQuantityChange = () => {
+    props.onChangeQuantity(quantity);
+  }
 
   const handleNumberChange = (value) => {
     setCountAdult(value);
+    setQuantity(value + countBaby + countChildren);
+    onQuantityChange();
+
+    
   };
 
   const handleNumberChangeChildren = (value) => {
     setCountChildren(value);
+    setQuantity(countAdult + countBaby + value);
+    onQuantityChange();
+    
   };
 
   const handleNumberChangeBaby = (value) => {
     setCountBaby(value);
+    setQuantity(countAdult + value + countChildren);
+    onQuantityChange();
+    // console.log(quantity);
+    // console.log("baby " + countAdult + countBaby + countChildren);
   };
 
   const handleToggle = () => {
@@ -44,7 +63,7 @@ function InDecrease(props) {
       <label>Số hành khách</label>
       <div className="people1">
         <div className="people" onClick={handleToggle}>
-          <PeopleIcon />
+          <PeopleIcon color="primary" />
           {countAdult} Người Lớn, {countChildren} Trẻ Em , {countBaby} Em Bé
         </div>
 
@@ -52,8 +71,8 @@ function InDecrease(props) {
         {isToggle ? (
           <div className="quanity">
             <div className="decrease">
-              <PeopleIcon />
-              <span> người lớn</span>
+              <PeopleIcon color="primary" />
+              <span> Người lớn</span>
               <div className="numericInput">
                 <NumericInput
                   min={0}
@@ -61,15 +80,15 @@ function InDecrease(props) {
                   value={countAdult}
                   onChange={handleNumberChange}
                   className={"numericInput"}
-                  label="Người lơn"
+                  label="Người lớn"
                   style={{float:"right"}}
                 />
               </div>
             </div>
 
             <div className="decrease">
-              <AccessibilityNewIcon />
-              <span> trẻ em </span>
+              <AccessibilityNewIcon color="primary" />
+              <span> Trẻ em </span>
               <div className="numericInput">
                 <NumericInput
                   min={0}
@@ -84,8 +103,8 @@ function InDecrease(props) {
             </div>
 
             <div className="decrease">
-              <ChildCareIcon />
-              <span> em bé</span>
+              <ChildCareIcon color="primary" />
+              <span> Em bé</span>
               <div className="numericInput">
                 <NumericInput
                   min={0}
