@@ -4,6 +4,14 @@ import axios from "axios";
 // import axios from '../../api/axiosClient'
 // import ENDPOINT from '../../api/endpoint'
 import flight from "../api/flight";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 
 
 function FlightList(props) {
@@ -84,13 +92,13 @@ function FlightList(props) {
             </div>
           </div>
           {/* <div className="mt-8 inline-block min-w-full shadow rounded-lg overflow-hidden"></div> */}
-          <div className="mt-8 inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <div className="mt-8 inline-block min-w-full shadow rounded-lg " style={{overflowX:"scroll"}}>
             <table className="min-w-full leading-normal">
-              <thead>
-                <tr style={{ backgroundColor: "#999", width: "100%" }}>
+              <thead >
+                <tr style={{ backgroundColor: "#999", width: "100%" , overflowX:"scroll"}}>
                   <th className={thCls}>FlightID</th>
                   <th className={thCls}>FlightCode</th>
-                  <th>Name</th>
+                  <th className={thCls}>Name</th>
                   <th className={thCls}>AirlineID</th>
                   <th className={thCls}>FlightStatus</th>
                   <th className={thCls}>Depature</th>
@@ -99,25 +107,30 @@ function FlightList(props) {
                   <th className={thCls}>Destination</th>
                   <th className={thCls}>GateID</th>
                   <th className={thCls}>Status</th>
-                  <th>CreaBy</th>
-                  <th>CreaBy</th>
+                  <th className={thCls}>CreaBy</th>
+                  <th className={thCls}>CreaBy</th>
                 </tr>
               </thead>
 
               <tbody className="customer-list">
-                {usersList.map((item) => (
+              {/* <ul>
+        {list.map((flight) => (
+          <li key={flight.flightId}>{flight.name}</li>
+        ))}
+      </ul> */}
+                {flight.map((flight) => (
                   <tr
-                    key={item.flightId}
+                    key={flight.flightId}
                     className="cursor-pointer bg-white even:bg-gray-100 hover:bg-gray-200"
                   >
-                    <td className={tdCls}>{item.depaturePlace}</td>
-                    <td className={tdCls}>{item.destinaton}</td>
-                    <td className={tdCls}>{item.quantity}</td>
-                    <td className={tdCls}>{item.classType}</td>
+                    <td className={tdCls}>{flight.depaturePlace}</td>
+                    <td className={tdCls}>{flight.destinaton}</td>
+                    <td className={tdCls}>{flight.quantity}</td>
+                    <td className={tdCls}>{flight.classType}</td>
                   </tr>
                 ))}
                 <tr>
-                  <td> 1</td>
+                  <td style={{ textAlign: "center" }}> 1</td>
                   <td> CBVNSGNTODAD</td>
                   <td> TpHCM_đến_ĐàNẵng</td>
                   <td style={{ textAlign: "center" }}> 2</td>
@@ -158,6 +171,20 @@ function FlightList(props) {
                 >
                   Next
                 </button>
+              </div>
+              <div>
+              <Link to='/' className="nav-link">
+                <button
+                  variant="contained"
+                  class="btn btn-primary"
+                  type="button"
+                  style={{ width: "15%", position: "relative", left:"10%" }}
+                  // onClick={submitForm}
+                >
+                  {" "}
+                  Tìm chuyến bay
+                </button>
+              </Link>
               </div>
             </div>
           </div>

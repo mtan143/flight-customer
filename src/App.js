@@ -27,27 +27,15 @@ function App() {
       
      
    
-              {/* <Link to={"/FlightList"} className="nav-link">
-                Items
-              </Link>
-         
-              <Link to={"/SearchFlight"} className="nav-link">
-                Add
-              </Link>
-      
-        
-          <Routes>
             
-            <Route exact path="/FlightList" element={<FlightList />} />
-            <Route exact path="/SearchFlight" element={<SearchFlight />} />
-           
-          </Routes>  */}
-           {/* <Routes>
+           <Routes>
+           <Route exact path="/"  element={<Home />}/>
             <Route exact path="/flightList" element={<FlightList />} />
-            <Route exact path="/home"  element={<Home />}/>
-          </Routes>  */}
+           
+          </Routes> 
           
-          <Home />
+          
+        
           
        
         
