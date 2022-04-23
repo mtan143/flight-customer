@@ -118,7 +118,7 @@ function FlightList(props) {
           <li key={flight.flightId}>{flight.name}</li>
         ))}
       </ul> */}
-                {flight.map((flight) => (
+                {usersList.map((flight) => (
                   <tr
                     key={flight.flightId}
                     className="cursor-pointer bg-white even:bg-gray-100 hover:bg-gray-200"
@@ -173,7 +173,7 @@ function FlightList(props) {
                 </button>
               </div>
               <div>
-              <Link to='/' className="nav-link">
+              <Link to='/flightList' className="nav-link">
                 <button
                   variant="contained"
                   class="btn btn-primary"
