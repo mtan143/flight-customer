@@ -8,7 +8,7 @@ ListPage.propTypes = {
 function ListPage(props) {
     return (
         <div>
-            ádsd
+            Product List Detail
         </div>
     );
 }

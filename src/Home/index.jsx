@@ -25,10 +25,6 @@ function Home(props) {
       <div className="flag">
         <VerticalTabs />
       </div>
-      {/* <div>
-        <FlightList />
-      </div> */}
-
       <TravelInspiration />
 
       <Reservation />

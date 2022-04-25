@@ -16,7 +16,7 @@ function HistoryTicket(props) {
         placeholder="Nhập email hoặc SĐT"
         width="100%"
       />
-      <button variant="contained" className="btn btn-primary" type="submit" style={{width:"30%"}}>
+      <button variant="contained" className="btn btn-primary" type="submit" style={{width:"30%", marginTop: "20%"}}>
        Tìm lịch sử đặt vé
       </button>
     </div>

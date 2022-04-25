@@ -1,0 +1,25 @@
+.body{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0;
+    border-left: 4px solid blue; /* (màu của thanh đứng) */
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    height: 100px;
+    
+}
+
+.toast__icon {
+    padding: 0 16px;
+    font-size: 50px;
+}
+
+.toast__title {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.toast__msg {
+    font-size: 20px;
+}

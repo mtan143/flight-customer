@@ -82,13 +82,7 @@ function OneWay(props) {
     console.log(addrtypeArrive[e.target.value]);
     setArrive(addrtypeArrive[e.target.value]);
   };
-
-  // Dữ liệu "DataPicket"
-  // const [dataPicket , setDataPicket] = useState();
-  // const handleChangeDatePick = (name, event) => {
-  //   console.log(name);
-  //   (setDataPicket(this.e.target.value))
-  // };
+  
   // Dữ liệu Hạng ghế
   const dataSeat = [
     "Phổ thông",
@@ -104,13 +98,23 @@ function OneWay(props) {
   };
 
   const [list, setList] = useState([]);
+  const [finalClass, setFinalClass] = useState("");
 
   const submitForm = useCallback(() => {
+    if (chair === "Phổ thông") {
+      setFinalClass('PHO_THONG');
+    } else if (chair === 'Phổ thông đặc biệt') {
+      setFinalClass('PHO_THONG_DAC_BIET');
+    } else if (chair === 'Thương gia') {
+      setFinalClass('THUONG_GIA');
+    } else {
+      setFinalClass('HANG_NHAT');
+    }
     const searchFlight = async () => {
       let data = JSON.stringify({
         departurePlace: go,
         destination: arrive,
-        classType: "THUONG_GIA",
+        classType: finalClass,
         departure: value,
         quantity: quantity,
       });
@@ -243,7 +247,7 @@ function OneWay(props) {
         <Row>
           <Col sm={12}>
             <div style={{ display: "flex", marginLeft: "49%" }}>
-              <Link to={"/flightList"} className="nav-link">
+              <Link to='/flightList' className="nav-link">
                 <button
                   variant="contained"
                   class="btn btn-primary"
@@ -255,23 +259,10 @@ function OneWay(props) {
                   Tìm chuyến bay
                 </button>
               </Link>
-
-              {/* <Routes>
-            <Route exact path="/flightList" element={<FlightList />} />
-          
-          </Routes>  */}
             </div>
-
-            {/* </Switch> */}
-            {/* </BrowserRouter> */}
           </Col>
         </Row>
       </Container>
-      <ul>
-        {list.map((flight) => (
-          <li key={flight.flightId}>{flight.name}</li>
-        ))}
-      </ul>
     </form>
   );
 }

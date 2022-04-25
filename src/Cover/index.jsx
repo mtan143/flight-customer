@@ -5,10 +5,10 @@ import header2 from "../resource/header2.png";
 import header3 from "../resource/header3.png";
 
 import { useState } from "react";
-import ReactDOM from "react-dom";
 import Carousel from "react-simply-carousel";
 import "./style.css";
-import { color, style } from "@mui/system";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 
 Cover.propTypes = {};
@@ -47,25 +47,28 @@ function Cover(props) {
       
         forwardBtnProps={{
           
-          children: ">",
+          children: <ArrowForwardIosIcon style={{color: "white"}}/>,
           style: {
             width: 60,
             height: 60,
             minWidth: 60,
             alignSelf: "center",
-            
-            
+            backgroundColor: "transparent",
+            border: "none"
+                
           }
           
           
         }}
         backwardBtnProps={{
-          children: "<",
+          children: <ArrowBackIosIcon style={{color: "white"}}/>,
           style: {
             width: 60,
             height: 60,
             minWidth: 60,
             alignSelf: "center",
+            backgroundColor: "transparent",
+            border: "none"
 
           }
         }}

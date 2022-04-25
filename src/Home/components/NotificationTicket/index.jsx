@@ -25,7 +25,6 @@ import "./style.css";
 const useStyles = makeStyles({
   root: {
     fontFamily: "system-ui",
-    paddingTop: 32,
 
     flex: 1,
   },
@@ -33,7 +32,7 @@ const useStyles = makeStyles({
   title: {
     textAlign: "center",
     fontFamily: "system-ui",
-    color: "#00CED1",
+    color: "rgb(1, 148, 243)",
   },
 });
 
@@ -83,16 +82,15 @@ function NotificationTicket(props) {
   };
   return (
     <div className={classes.root}>
-      {/* <Avatar className={classes.avatar}>
-        <LockOutlined></LockOutlined>
-      </Avatar> */}
-
       <Typography className={classes.title} component="h3" variant="h4">
         Tạo thông báo giá vé
       </Typography>
 
-      <form onSubmit={form.handleSubmit(handleSubmit)} fullWidth>
-        {/* <InputField name="fullName" label="Full Name" form={form} /> */}
+      <form
+        style={{ marginTop: "30px" }}
+        onSubmit={form.handleSubmit(handleSubmit)}
+        fullWidth
+      >
         <Row>
           <Col sm={5}>
             <label>
@@ -102,12 +100,8 @@ function NotificationTicket(props) {
               aria-label="Default select example"
               className="formselect"
             >
-              {/* <option>Open this select menu</option> */}
-              <option value="1">
-                {/* <FaTimes /> */}
-                Đà Nẵng, Việt Nam{" "}
-              </option>
-              <option value="2">TP HCM, Việt Nam</option>
+              <option value="1">TP HCM, Việt Nam </option>
+              <option value="2">Đà Nẵng, Việt Nam</option>
               <option value="3">Hà Nội, Việt Nam</option>
               <option value="3">Đà Lạt, Việt Nam</option>
               <option value="3">Nha Trang, Việt Nam</option>
@@ -116,7 +110,7 @@ function NotificationTicket(props) {
               <option value="3">Vinh, Việt Nam</option>
             </Form.Select>
           </Col>
-          {/* ------------------------------------------------------------------------------------- */}
+
           <Col sm={2}>
             <div className="notificationIcon" style={{ marginTop: "20%" }}>
               <label></label>
@@ -132,11 +126,7 @@ function NotificationTicket(props) {
               aria-label="Default select example"
               className="formselect"
             >
-              {/* <option>Open this select menu</option> */}
-              <option value="1">
-                {/* <FaTimes /> */}
-                Đà Nẵng, Việt Nam{" "}
-              </option>
+              <option value="1">Đà Nẵng, Việt Nam </option>
               <option value="2">TP HCM, Việt Nam</option>
               <option value="3">Hà Nội, Việt Nam</option>
               <option value="3">Đà Lạt, Việt Nam</option>
@@ -188,7 +178,9 @@ function NotificationTicket(props) {
           </Col>
         </Row>
 
-        <h4 style={{ color: "#00CED1", marginTop: "80px" }}>Ngày bay</h4>
+        <h4 style={{ color: "rgb(1, 148, 243)", marginTop: "80px" }}>
+          Ngày bay
+        </h4>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox defaultChecked />}
@@ -228,7 +220,7 @@ function NotificationTicket(props) {
           </Col>
         </Row>
         <br></br>
-        <h4 style={{ color: "#00CED1" }}>Lựa chọn ưu tiên</h4>
+        <h4 style={{ color: "rgb(1, 148, 243)" }}>Lựa chọn ưu tiên</h4>
         <Row>
           <Col sm={6}>
             <label>Khung giờ ưu tiên</label>
@@ -289,7 +281,7 @@ function NotificationTicket(props) {
           </Col>
         </Row>
 
-        <h4 style={{ color: "#00CED1" }}>Cài đặt thông báo</h4>
+        <h4 style={{ color: "rgb(1, 148, 243)" }}>Cài đặt thông báo</h4>
         <Row>
           <Col sm={3}>
             <div className="settingNotification">
@@ -305,7 +297,7 @@ function NotificationTicket(props) {
           <Col sm={3}></Col>
           <Col sm={3}></Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: "15px", marginBottom: "15px" }}>
           <Col sm={3}>
             <div className="settingNotification">
               <AccountBalanceIcon />
@@ -317,6 +309,17 @@ function NotificationTicket(props) {
           </Col>
           <Col sm={3}></Col>
           <Col sm={3}></Col>
+        </Row>
+        <Row>
+          <button
+            variant="contained"
+            class="btn btn-primary"
+            type="button"
+            style={{  width: "25%", float: "right" }}
+            onClick={() => alert("Tạo thông báo thành công!")}
+          >
+            Gửi thông báo
+          </button>
         </Row>
       </form>
     </div>

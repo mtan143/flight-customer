@@ -10,18 +10,22 @@ import {
     Routes,
     BrowserRouter,
   } from "react-router-dom";
+//   import { useMatch } from "@reach/router"
+import { useLocation, useMatch } from "react-router-dom";
+import { useRouteMatch } from 'react-router'
 
 ListFlight.propTypes = {
     
 };
 
 function ListFlight(props) {
+    const match = useMatch();
     return (
         <div>
             Product Feature
-            <Switch>
-                <Route path="/products" exact element={ListPage} />
-            </Switch>
+            <Routes>
+                <Route path="/products"  element={<ListPage />} />
+            </Routes>
         </div>
     );
 }

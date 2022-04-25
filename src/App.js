@@ -5,6 +5,7 @@ import Home from './Home';
 import VerticalTabs from './Home/VerticalTabs';
 // import VerticalTabs from './Home/VerticalTabs';
 import FlightList from './pages/FlightList';
+import ListFlight from './ListFlight';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,7 @@ import {
 import SearchFlight from './SearchFlight/index';
 
 import TodoForm from './Home/components/TodoForm';
+import Payment from './Payment';
 
 
 function App() {
@@ -24,20 +26,13 @@ function App() {
      
     <div className="App">
         <Header />
-      
-     
-   
-            
+
            <Routes>
+           <Route exact path="/flightList" element={<FlightList />} />
            <Route exact path="/"  element={<Home />}/>
-            <Route exact path="/flightList" element={<FlightList />} />
-           
+           <Route exact path="/payment" element={<Payment/> }/>
           </Routes> 
-          
-          
-        
-          
-       
+
         
         <Footer />
     </div>
